@@ -30,7 +30,7 @@ resource "aws_cloudwatch_event_rule" "security_hub" {
       findings = merge(
         {
           ProductArn = [
-            { prefix = "arn:aws:securityhub:${data.aws_region.current.name}:product/aws/guardduty" }
+            { prefix = "arn:aws:securityhub:${data.aws_region.current.name}::product/aws/guardduty" }
           ],
           Severity = {
             Normalized = [
