@@ -1,3 +1,7 @@
+## Compatibility
+
+This module requires Terraform 0.14 or later. Older Terraform versions are not supported.
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
