@@ -1,6 +1,6 @@
 resource "aws_iam_role" "guardduty_notification" {
   count = var.enable_guardduty_events || var.enable_security_hub_events ? 1 : 0
-  name  = "guarddutty-${data.aws_region.current.name}-notification"
+  name  = "guarddutty-${data.aws_region.current.region}-notification"
   assume_role_policy = jsonencode({
     Version = "2012-10-17",
     Statement = [
