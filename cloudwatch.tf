@@ -1,6 +1,6 @@
 resource "aws_cloudwatch_event_rule" "guardduty" {
   count       = var.enable_guardduty_events ? 1 : 0
-  name        = "guarddutty-${data.aws_region.current.name}-notifications"
+  name        = "guarddutty-${data.aws_region.current.region}-notifications"
   description = "Route GuardDuty findings to target"
   event_pattern = jsonencode({
     source        = ["aws.guardduty"],
@@ -20,7 +20,7 @@ resource "aws_cloudwatch_event_rule" "guardduty" {
 
 resource "aws_cloudwatch_event_rule" "security_hub" {
   count          = var.enable_security_hub_events ? 1 : 0
-  name           = "guarddutty-security-hub-${data.aws_region.current.name}-notifications"
+  name           = "guarddutty-security-hub-${data.aws_region.current.region}-notifications"
   description    = "Route SecurityHub GuardDuty findings to target"
   event_bus_name = "default"
   event_pattern = jsonencode({
@@ -30,7 +30,7 @@ resource "aws_cloudwatch_event_rule" "security_hub" {
       findings = merge(
         {
           ProductArn = [
-            { prefix = "arn:aws:securityhub:${data.aws_region.current.name}::product/aws/guardduty" }
+            { prefix = "arn:aws:securityhub:${data.aws_region.current.region}::product/aws/guardduty" }
           ],
           Severity = {
             Normalized = [
