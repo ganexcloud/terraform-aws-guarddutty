@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.0](https://github.com/ganexcloud/terraform-aws-guarddutty/compare/v1.0.3...v2.0.0) (2026-09-25)
+
+### ⚠ BREAKING CHANGES
+
+* **terraform:** minimum supported Terraform version is now 1.6.0.
+
+### Features
+
+* **terraform:** modernize module for terraform 1.15.8 ([#3](https://github.com/ganexcloud/terraform-aws-guarddutty/issues/3)) ([4a42026](https://github.com/ganexcloud/terraform-aws-guarddutty/commit/4a420265e897491c20ca47dcc73b17d3e0465a7b))
+
 ## [1.0.3](https://github.com/ganexcloud/terraform-aws-guarddutty/compare/v1.0.2...v1.0.3) (2026-08-06)
 
 ### Bug Fixes
